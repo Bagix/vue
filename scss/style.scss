@@ -1,0 +1,19 @@
+* {box-sizing: border-box;}
+
+.container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+  border: 4px solid purple;
+  border-radius: .7rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  div[id^='app'] {
+    border: 2px solid lightseagreen;
+    padding: 1rem;
+    border-radius: .3rem;
+    margin: 1rem 2rem;
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Vue</title>
+</head>
+<body>
+
+<div class="container">
+
+  <div id="app">
+    {{message}}
+  </div>
+
+  <div id="app-2">
+    <span v-bind:title="message">
+      Najedź na mnie myszką i zobacz co się stanie.
+    </span>
+  </div>
+
+  <div id="app-3">
+    <span v-if="seen">Teraz mnie widać</span>
+  </div>
+
+  <div id="app-4">
+    <ol>
+      <li v-for="todo in todos">
+        {{todo.text}}
+      </li>
+    </ol>
+  </div>
+
+  <div id="app-5">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">Odwróć to!</button>
+  </div>
+
+  <div id="app-6">
+    <p v-if="message">{{message}}</p>
+    <input v-model="message">
+  </div>
+
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
