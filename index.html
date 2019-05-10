@@ -43,9 +43,20 @@
     <input v-model="message">
   </div>
 
+  <div id="app-7">
+    <input v-model="newItem">
+    <button v-on:click="addItem">Klik</button>
+    <todo-item
+    v-for="item in shopList"
+    v-bind:todo="item"
+    v-bind:key="item.id">
+    </todo-item>
+  </div>
+
 </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/todo-component.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
