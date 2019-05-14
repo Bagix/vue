@@ -77,6 +77,59 @@
     </div>
   </div>
 
+  <div id="fantasy-1">
+    <h1 class="title">Fantasy</h1>
+    <input type="text" v-model="color" v-on:keyup.enter="changeColor">
+    <div class="test-square"></div>
+  </div>
+
+  <div id="vue-app-7">
+    <h1 class="title">Conditionals</h1>
+    <button v-on:click="error = !error">Toggle Error</button>
+    <button v-on:click="success = !success">Toggle Success</button>
+    <p v-if="error">There has been an error</p>
+    <p v-else-if="success">It is success</p> <!-- Można stworzyć else if, który będzie nawiązywał do if wczęśniej -->
+    <p v-show="error">There has been an error (show)</p>
+    <p v-show="success">It is success (show)</p> <!-- v-show nie tyka DOM, a jedynie nadaje styl aby ukryć/pokazać element -->
+  </div>
+
+  <div id="vue-app-8">
+    <h1 class="title">For Loop</h1>
+    <ul>
+      <li v-for="character in characters">{{ character }}</li>
+    </ul>
+    <ul>
+      <li v-for="(ninja, index) in ninjas">{{ index }}. {{ ninja.name }} - Age: {{ ninja.age }}</li>
+    </ul>
+    <template v-for="(ninja, index) in ninjas"> <!-- template jest ignorowany przez VUE, dzięki czemu nie robim się za dużo znaczników (fajne!!)-->
+      <h3>{{ index }}. {{ ninja.name }}</h3>
+      <p>{{ ninja.age }}</p>
+    </template>
+    <template v-for="ninja in ninjas">
+      <div v-for="(val,key) in ninja">
+        <p>{{ key }}</p>
+        <p>{{ val }}</p>
+      </div>
+    </template>
+  </div>
+
+  <div id="vue-app-9">
+    <h1 class="title">Punchbag Game</h1>
+    <!-- bag image -->
+    <div id="bag" v-bind:class="{burst: ended}"></div>
+
+    <!-- bag health -->
+    <div id="bag-health">
+      <div v-bind:style="{width: health + '%'}"></div>
+    </div>
+
+    <!-- game controls -->
+    <div id="controls">
+      <button v-on:click="punch" v-show="!ended">Punch</button>
+      <button v-on:click="restart">Restart</button>
+    </div>
+  </div>
+
   <script src="js/app.js"></script>
 </body>
 </html>

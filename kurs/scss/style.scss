@@ -70,3 +70,64 @@ div[id^="vue-app"] {
     }
   }
 }
+
+#fantasy-1 {
+  .test-square {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+  }
+}
+
+#vue-app-9 {
+  #bag {
+    width: 200px;
+    height: 400px;
+    margin: 0 auto;
+    background-image: url('../images/bag.png');
+    background-size: 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    &.burst {
+      background-image: url('../images/bag-burst.png');
+    }
+  }
+
+  #bag-health {
+    width: 200px;
+    border: 2px solid #000;
+    margin: 0 auto 20px auto;
+    border-radius: .33rem;
+    div {
+      height: 20px;
+      background: crimson;
+    }
+  }
+
+  #controls {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around; 
+    button{
+      padding: 1rem;
+      border-radius: .33rem;
+      font-weight: bold;
+      transition: all 100ms linear 0s;
+      &:first-child {
+        background: rgb(237,20,61);
+        border: 2px solid #000;
+        &:hover {
+          background: rgb(255,40,81);
+        }
+      }
+      &:nth-child(2) {
+        background: rgb(50,205,50);
+        border: 2px solid darkgreen;
+        &:hover {
+          background: rgb(70,225,70);
+        }
+      }
+    }
+  }
+}

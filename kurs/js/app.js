@@ -99,3 +99,56 @@ new Vue({
     }
   }
 });
+
+new Vue({
+  el: '#fantasy-1',
+  data: {
+    color: ''
+  },
+  methods: {
+    changeColor: function() {
+      console.log(this.color);
+      document.querySelector('.test-square').style.backgroundColor = this.color;
+    }
+  }
+});
+
+new Vue({
+  el: '#vue-app-7',
+  data: {
+    error: false,
+    success: false
+  },
+});
+
+new Vue({
+  el: '#vue-app-8',
+  data: {
+    characters: ['Mario','Luigi','Yoshi','Bowser'],
+    ninjas: [
+      {name: 'Sushi', age: 25},
+      {name: 'Kushi', age: 35},
+      {name: 'Yoshi', age: 45},
+    ]
+  },
+});
+
+new Vue({
+  el: '#vue-app-9',
+  data: {
+    health: 100,
+    ended: false,
+  },
+  methods: {
+    punch: function() {
+      this.health -= 10;
+      if(this.health <= 0) {
+        this.ended = true;
+      }
+    },
+    restart: function() {
+      this.health = 100;
+      this.ended = false;
+    }
+  }
+});
