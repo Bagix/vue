@@ -152,3 +152,74 @@ new Vue({
     }
   }
 });
+
+var one = new Vue({
+  el: '#vue-app-one',
+  data: {
+    title: 'Vue App One'
+  },
+  computed: {
+    greet: function() {
+      return 'Hello from app one :)';
+    }
+  }
+});
+
+var two = new Vue({
+  el: '#vue-app-two',
+  data: {
+    title: 'Vue App Two'
+  },
+  methods: {
+    changeTitle: function() {
+      one.title = "Changed title";
+    }
+  },
+  computed: {
+    greet: function() {
+      return 'This is App 2';
+    }
+  }
+});
+
+two.title = "Changed from outside";
+
+
+var data = { // Jeśli w komponencie użyjemy tej zmiennej z zewnątrz to  JEST ona współdzielona przez wszystkie instacje.
+  name: 'Yoshi'
+};
+
+Vue.component('greeting', {
+  template: '<p>Hi there, I am {{ name }}. <button v-on:click="changeName">Change Name</button></p>',
+  data: function() { // Jeśli nie użyjemy zmiennej z zewnątrz to ograniczamy się tylko do komponentu w pojedynczej instacji. W komponencie 'data' to funkcja, nie obiekt.
+    return {
+      name: 'Yoshi'
+    }
+  },
+  methods: {
+    changeName: function() {
+      this.name = 'Mario';
+    }
+  }
+});
+
+new Vue({
+  el: '#vue-app-10',
+});
+
+new Vue({
+  el: '#vue-app-11',
+});
+
+new Vue({
+  el: '#vue-app-12',
+  data: {
+    output: 'Your favorite food'
+  },
+  methods: {
+    readRefs: function() {
+      console.log(this.$refs.test.innerText);
+      this.output = this.$refs.myInput.value;
+    }
+  }
+});
