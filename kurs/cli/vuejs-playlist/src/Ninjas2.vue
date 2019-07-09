@@ -13,3 +13,10 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+ul > li {
+  color: palevioletred;
+}
+
+</style>

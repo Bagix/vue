@@ -1,21 +1,25 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
-    <ninjas></ninjas>
-    <ninjas2></ninjas2>
+    <app-header></app-header>
+    <app-ninjas></app-ninjas>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import Ninjas2 from './Ninjas2.vue' // Komponent lokalny, tylko w tym komponenćie
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+import Ninjas from './components/Ninjas.vue';
 
 export default {
   components: {
-    'ninjas2': Ninjas2
+    'app-header': Header,
+    'app-footer': Footer,
+    'app-ninjas': Ninjas,
   },
   data () {
     return {
-      title: 'Ninja App'
+
     }
   },
 }

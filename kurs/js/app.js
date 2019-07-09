@@ -185,7 +185,7 @@ var two = new Vue({
 two.title = "Changed from outside";
 
 
-var data = { // Jeśli w komponencie użyjemy tej zmiennej z zewnątrz to  JEST ona współdzielona przez wszystkie instacje.
+var data = { // Jeśli w komponencie użyjemy tej zmiennej z zewnątrz to JEST ona współdzielona przez wszystkie instacje.
   name: 'Yoshi'
 };
 
@@ -194,7 +194,8 @@ Vue.component('greeting', {
   data: function() { // Jeśli nie użyjemy zmiennej z zewnątrz to ograniczamy się tylko do komponentu w pojedynczej instacji. W komponencie 'data' to funkcja, nie obiekt.
     return {
       name: 'Yoshi'
-    }
+    };
+    // return data;
   },
   methods: {
     changeName: function() {
