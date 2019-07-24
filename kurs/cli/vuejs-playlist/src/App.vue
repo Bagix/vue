@@ -1,41 +1,21 @@
 <template>
-  <div>
-    <!--<form-helper>
-      <div slot="form-header">
-        <h3>This is the title of the form</h3>
-        <p>Information about the form</p>
-      </div>
-      <div slot="form-fields">
-        <input type="text" placeholder="Name" required />
-        <input type="password" placeholder="Password" required />
-      </div>
-      <div slot="form-controls">
-        <button v-on:click="handleSubmit">Submit</button>
-      </div>
-    </form-helper>-->
-    <keep-alive>
-      <component v-bind:is="component"></component>
-    </keep-alive>
-    <button v-on:click="component = 'form-one'">Show form 1</button>
-    <button v-on:click="component = 'form-two'">Show form 2</button>
-  </div>
+  <!--<add-blog></add-blog>-->
+  <show-blogs></show-blogs>
+
 </template>
 
 <script>
-// import formHelper from './components/formHelper.vue';
-import formOne from './components/formOne.vue';
-import formTwo from './components/formTwo.vue';
+//import addBlog from './components/addBlog.vue';
+import showBlogs from './components/showBlogs.vue';
 
 export default {
   components: {
-    // 'form-helper': formHelper,
-    'form-one': formOne,
-    'form-two': formTwo,
+    //'add-blog': addBlog,
+    'show-blogs': showBlogs,
   },
   data () {
     return {
-     // title: "Dynamic slot title"
-     component: 'form-two'
+
     }
   },
   methods: {
@@ -45,5 +25,8 @@ export default {
 </script>
 
 <style lang="scss">
-
+body {
+  margin: 0;
+  font-family: 'Lucida Sans', sans-serif;
+}
 </style>
